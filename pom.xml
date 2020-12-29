@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<prerequisites>
 		<maven>3.0.0</maven>
@@ -11,7 +7,7 @@
 
 	<groupId>org.omnifaces</groupId>
 	<artifactId>omniservices</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.2-junit_5-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>OmniServices</name>
@@ -517,10 +513,7 @@
                                 <configuration>
                                     <tasks>
                                         <echo>Copying server.xml</echo>
-                                        <copy
-                                            file="src/test/resources/server.xml"
-                                            tofile="${project.build.directory}/wlp/templates/servers/defaultServer/server.xml"
-                                        />
+                                        <copy file="src/test/resources/server.xml" tofile="${project.build.directory}/wlp/templates/servers/defaultServer/server.xml" />
                                     </tasks>
                                 </configuration>
                             </execution>
