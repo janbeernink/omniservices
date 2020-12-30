@@ -22,12 +22,12 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.annotation.Resource;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.Bean;
 import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -66,7 +66,6 @@ class PooledContextTest {
 
 	private PooledContext pooledContext;
 
-	@Resource
 	private BeanManager beanManager;
 
 	private Bean<Foo> fooBean;
@@ -78,6 +77,7 @@ class PooledContextTest {
 	@BeforeEach
 	private void init() {
 		pooledContext = new PooledContext();
+		beanManager = CDI.current().getBeanManager();
 		fooBean = (Bean<Foo>) beanManager.getBeans(Foo.class).stream().findAny().get();
 	}
 
