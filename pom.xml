@@ -76,7 +76,7 @@
 		<maven.compiler.target>${javase.version}</maven.compiler.target>
 
 		<!-- Test versions. -->
-		<jacoco.version>0.7.4.201502262128</jacoco.version>
+		<jacoco.version>0.8.6</jacoco.version>
         <glassfish.version>4.1.1</glassfish.version>
         <payara.version>4.1.1.162</payara.version>
         <wildfly.version>10.0.0.Final</wildfly.version>
