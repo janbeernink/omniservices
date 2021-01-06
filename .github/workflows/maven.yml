@@ -4,11 +4,12 @@ on: [push, pull_request]
 
 jobs:
   test:
-    name: Run tests against ${{ matrix.server }}
+    name: Run tests against ${{ matrix.server }} on JDK ${{ matrix.jdk }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
         server: [payara, wildfly, glassfish, tomee, liberty]
+        jdk: [1.8, 15]
 
     steps:
     - uses: actions/checkout@v2
